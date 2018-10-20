@@ -38,11 +38,33 @@ commandSearch();
     };
 
     function townArtistEvents() {
+        const queryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+        
+        request(queryUrl, function(error, response, body) {
 
+            if (!error && response.statusCode === 200) {
+
+                var jsonData = JSON.parse(body);
+
+                var eventDate = jsonData.datetime;
+
+                var showData = [
+                    "Venue: " + jsonData.venue.name,
+                    "Location: " + jsonData.venue.city + ", " + jsonData.venue.region,
+                    "Date: " + eventDate
+                ].join("\n\n");
+
+                fs.appendFile("log.txt", showData + divider, function(err) {
+                    if (err) throw err;
+                    console.log(showData);
+                };
+
+            };
+        });
     };
 
     function OMDBMovie() {
-        var queryUrl = "http://www.omdbapi.com/?t=" + searchName + "&y=&plot=short&apikey=trilogy";
+        const queryUrl = "http://www.omdbapi.com/?t=" + searchName + "&y=&plot=short&apikey=trilogy";
 
         request(queryUrl, function(error, response, body) {
 
