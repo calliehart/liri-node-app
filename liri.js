@@ -1,7 +1,10 @@
 require("dotenv").config();
 
-const keys = require("./keys.js");
-const spotify = new spotify(keys.spotify);
+var keys = require("./keys.js");
+var request = require("request");
+var moment = require("moment");
+var Spotify = require('node-spotify-api');
+var spotify = new Spotify(keys.spotify);
 const fs = require("fs");
 
 let command = process.argv[2];
@@ -35,18 +38,43 @@ commandSearch();
 
     function spotifySong() {
 
+        spotify
+        .search({ type: 'track', query: searchName })
+        .then(function(response) {
+
+          var jsonData = response.tracks.items[0];
+            //console.log(jsonData);
+          var songData = [
+              "Artist: " + jsonData.artists[0].name,
+              "Song: " + jsonData.name,
+              "Preview: " + jsonData.preview_url,
+              "Album: " + jsonData.album.name
+          ].join("\n\n");
+
+          fs.appendFile("log.txt", songData + divider, function(err) {
+            if (err) throw err;
+            console.log(songData + "\n");
+            });
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
+
+        
+
+
     };
 
     function townArtistEvents() {
-        const queryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+        var queryUrl = "https://rest.bandsintown.com/artists/" + searchName + "/events?app_id=codingbootcamp";
         
         request(queryUrl, function(error, response, body) {
 
             if (!error && response.statusCode === 200) {
 
-                var jsonData = JSON.parse(body);
+                var jsonData = JSON.parse(body)[0];
 
-                var eventDate = jsonData.datetime;
+                var eventDate = moment(jsonData.datetime).format("MM/DD/YYYY");
 
                 var showData = [
                     "Venue: " + jsonData.venue.name,
@@ -56,15 +84,15 @@ commandSearch();
 
                 fs.appendFile("log.txt", showData + divider, function(err) {
                     if (err) throw err;
-                    console.log(showData);
-                };
+                    console.log(showData + "\n");
+                });
 
             };
         });
     };
 
     function OMDBMovie() {
-        const queryUrl = "http://www.omdbapi.com/?t=" + searchName + "&y=&plot=short&apikey=trilogy";
+        var queryUrl = "http://www.omdbapi.com/?t=" + searchName + "&y=&plot=short&apikey=trilogy";
 
         request(queryUrl, function(error, response, body) {
 
@@ -86,10 +114,11 @@ commandSearch();
                 
                 fs.appendFile("log.txt", movieData + divider, function(err) {
                     if (err) throw err;
-                    console.log(movieData);
-                };
-            });
-        };
+                    console.log(movieData + "\n");
+                });
+            };
+        });
+    };
 
     function readRandom() {
         fs.readFile("random.txt", "utf8", function(error, data) {
@@ -103,8 +132,10 @@ commandSearch();
           
             let command = dataArr[0];
             let searchName = dataArr[1];
-             
-            commandSearch();
 
-          });
+            console.log(command, searchName);
+            
+            });
+            
+            //commandSearch();
     };

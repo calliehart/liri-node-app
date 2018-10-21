@@ -1,0 +1,92 @@
+Venue: Cubby Bear
+
+Location: Chicago, IL
+
+Date: 11/03/2018
+------------------------------------------------------------
+
+Venue: Rogers Place
+
+Location: Edmonton, 
+
+Date: 10/22/2018
+------------------------------------------------------------
+
+Venue: Rogers Place
+
+Location: Edmonton, 
+
+Date: 10/22/2018
+------------------------------------------------------------
+
+Title: Casablanca
+
+Year: 1942
+
+IMDB Rating: 8.5
+
+Rotten Tomatoes Rating: 97%
+
+Country: USA
+
+Language: English, French, German, Italian
+
+Plot: A cynical nightclub owner protects an old flame and her husband from Nazis in Morocco.
+
+Actors: Humphrey Bogart, Ingrid Bergman, Paul Henreid, Claude Rains
+------------------------------------------------------------
+
+Artist: undefined
+
+Song: Home
+
+Preview: https://p.scdn.co/mp3-preview/8e1ff07117c78984d221597a80148e80eae6e146?cid=c1fbffd4603341ca92350c8aee3c7f2b
+
+Album: Up from Below
+------------------------------------------------------------
+
+Artist: Edward Sharpe & The Magnetic Zeros
+
+Song: Home
+
+Preview: https://p.scdn.co/mp3-preview/8e1ff07117c78984d221597a80148e80eae6e146?cid=c1fbffd4603341ca92350c8aee3c7f2b
+
+Album: Up from Below
+------------------------------------------------------------
+
+Artist: The Beatles
+
+Song: Lucy In The Sky With Diamonds - Remastered 2009
+
+Preview: null
+
+Album: Sgt. Pepper's Lonely Hearts Club Band (Remastered)
+------------------------------------------------------------
+
+Artist: Cardi B
+
+Song: Bodak Yellow
+
+Preview: https://p.scdn.co/mp3-preview/cab6e91217590b37cc254585f3f951c5a5280375?cid=c1fbffd4603341ca92350c8aee3c7f2b
+
+Album: Invasion of Privacy
+------------------------------------------------------------
+
+Artist: Kris Kross Amsterdam
+
+Song: Whenever (feat. Conor Maynard)
+
+Preview: https://p.scdn.co/mp3-preview/96969a8f4009660f5bf7eed23c70d1a16e8ab504?cid=c1fbffd4603341ca92350c8aee3c7f2b
+
+Album: Whenever (feat. Conor Maynard)
+------------------------------------------------------------
+
+Artist: Coolio
+
+Song: Gangsta's Paradise
+
+Preview: https://p.scdn.co/mp3-preview/5299497db5ba226f388f3a064064cc44b2b51568?cid=c1fbffd4603341ca92350c8aee3c7f2b
+
+Album: Gangsta's Paradise
+------------------------------------------------------------
+
