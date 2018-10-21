@@ -38,6 +38,10 @@ commandSearch();
 
     function spotifySong() {
 
+        if (!searchName) {
+            searchName = "The Sign";
+         };
+
         spotify
         .search({ type: 'track', query: searchName })
         .then(function(response) {
@@ -53,7 +57,7 @@ commandSearch();
 
           fs.appendFile("log.txt", songData + divider, function(err) {
             if (err) throw err;
-            console.log(songData + "\n");
+            console.log("\n" + songData + "\n");
             });
         })
         .catch(function(err) {
@@ -84,7 +88,7 @@ commandSearch();
 
                 fs.appendFile("log.txt", showData + divider, function(err) {
                     if (err) throw err;
-                    console.log(showData + "\n");
+                    console.log("\n" + showData + "\n");
                 });
 
             };
@@ -114,7 +118,7 @@ commandSearch();
                 
                 fs.appendFile("log.txt", movieData + divider, function(err) {
                     if (err) throw err;
-                    console.log(movieData + "\n");
+                    console.log("\n" + movieData + "\n");
                 });
             };
         });
@@ -127,15 +131,16 @@ commandSearch();
               return console.log(error);
             };
             
-            console.log(data);
+            //console.log(data);
             var dataArr = data.split(",");
           
-            let command = dataArr[0];
-            let searchName = dataArr[1];
+            command = dataArr[0];
+            searchName = dataArr[1];
 
-            console.log(command, searchName);
+            //console.log(command);
+            //console.log(searchName);
+            commandSearch();
             
             });
             
-            //commandSearch();
     };
