@@ -11,7 +11,7 @@ let command = process.argv[2];
 let searchName = process.argv.slice(3).join(" ");
 
 var divider =
-    "\n------------------------------------------------------------\n\n";
+    "\n\n------------------------------------------------------------\n\n";
 
 
 function commandSearch() {
@@ -57,7 +57,7 @@ commandSearch();
 
           fs.appendFile("log.txt", songData + divider, function(err) {
             if (err) throw err;
-            console.log("\n" + songData + "\n");
+            console.log(divider + songData + divider);
             });
         })
         .catch(function(err) {
@@ -88,7 +88,7 @@ commandSearch();
 
                 fs.appendFile("log.txt", showData + divider, function(err) {
                     if (err) throw err;
-                    console.log("\n" + showData + "\n");
+                    console.log(divider + showData + divider);
                 });
 
             };
@@ -118,7 +118,7 @@ commandSearch();
                 
                 fs.appendFile("log.txt", movieData + divider, function(err) {
                     if (err) throw err;
-                    console.log("\n" + movieData + "\n");
+                    console.log(divider + movieData + divider);
                 });
             };
         });
